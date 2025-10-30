@@ -52,7 +52,6 @@ nav h1 { font-size: 28px; }
   transition: width 0.3s;
 }
 
-.menu a:hover::after { width: 100%; }
 
 /* Banner */
 .banner {
@@ -88,7 +87,10 @@ nav h1 { font-size: 28px; }
 }
 
 .grid-servicos article:hover { transform: scale(1.05); }
-.grid-servicos img { width: 100%; border-radius: 5px; }
+.grid-servicos img { 
+  width: 100%; 
+  border-radius: 5px; 
+}
 
 /* Sobre */
 .sobre {
