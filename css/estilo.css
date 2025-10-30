@@ -56,6 +56,10 @@ nav {
   animation: sim 1s ease;
 }
 
+h2 {
+  font-size: 32px;
+}
+
 
 .banner p { 
   font-size: 18px; 
@@ -115,7 +119,7 @@ nav {
 
 .eletricista-animado {
   position: absolute;
-  top: 80px;
+  top: 60px;
   left: 90px;
   width: 150px;
   animation: piscar 0.75s infinite alternate;
