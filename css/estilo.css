@@ -95,8 +95,7 @@ h2 {
   transition: transform 0.3s;
 }
 
-.grid-servicos article:hover {
-  /*Imagen que quando colocar o mouse emcima ela fica maior*/
+.grid-servicos article:hover {  
   transform: scale(1.05);
 }
 
@@ -203,40 +202,4 @@ h2 {
     font-size: 14px;
     padding: 20px;
   }
-}
-
-/* Estilos para o botão */
-.mudar-cor button {
-  background-color: #1a237e;
-  /* Cor de fundo inicial (azul) */
-  color: white;
-  /* Cor do texto */
-  font-size: 18px;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  /* Borda arredondada */
-  cursor: pointer;
-  transition: all 0.3s ease;
-  /* Transição suave para os efeitos */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  /* Sombra para dar profundidade */
-}
-
-/* Efeito de hover no botão */
-.mudar-cor button:hover {
-  background-color: #FF5722;
-  /* Cor de fundo ao passar o mouse (laranja) */
-  transform: scale(1.05);
-  /* Aumenta o tamanho do botão um pouco */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  /* Aumenta a sombra */
-}
-
-/* Efeito de focus (quando o botão é clicado ou focado) */
-.mudar-cor button:focus {
-  outline: none;
-  /* Remove a borda de foco padrão do navegador */
-  box-shadow: 0 0 10px 3px rgba(255, 87, 34, 0.7);
-  /* Sombra de foco para destaque */
 }

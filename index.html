@@ -1,345 +1,80 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eletricistas Davi e Marcos</title>
-    <link rel="shortcut icon" href="imagens/images (2).jpg" type="image/x-icon">
-    <link rel="stylesheet" href="css/estilo.css">
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      
-      body {
-        font-family: Arial, sans-serif;
-        background: #fff;
-        color: #000;
-        line-height: 1.5;
-      }
-      
-      header {
-        background: #1a237e;
-        color: #fff;
-        position: relative;
-        padding-bottom: 32px;
-      }
-      
-      nav {
-        /*Titulo ServiÃ§os ElÃ©trica de Qualidade*/
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 16px 32px;
-        flex-wrap: wrap;
-      }
-      
-      .menu {
-        list-style: none;
-        display: flex;
-        gap: 16px;
-        flex-wrap: wrap;
-      }
-      
-      .menu a {
-        color: #fff;
-        text-decoration: none;
-        font-weight: bold;
-        position: relative;
-      }
-      
-      .menu a {
-        display: block;
-        height: 2px;
-        background: #fff;
-        width: 0%;
-        transition: width 0.3s;
-      }
-      
-      
-      .banner {
-        text-align: center;
-        padding: 40px 16px;
-        animation: sim 1s ease;
-      }
-      
-      h2 {
-        font-size: 32px;
-      }
-      
-      
-      .banner p {
-        font-size: 18px;
-        margin-top: 10px;
-      }
-      
-      @keyframes sim {
-        from {
-          opacity: 0;
-          transform: translateY(-20px);
-        }
-      
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      
-      
-      .grid-servicos {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 32px;
-        padding: 32px;
-      }
-      
-      .grid-servicos article {
-        background: #fff;
-        text-align: center;
-        padding: 16px;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s;
-      }
-      
-      .grid-servicos article:hover {
-        /*Imagen que quando colocar o mouse emcima ela fica maior*/
-        transform: scale(1.05);
-      }
-      
-      .grid-servicos img {
-        width: 100%;
-        border-radius: 5px;
-      }
-      
-      
-      .sobre {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 32px;
-        padding: 32px;
-        flex: 1;
-        font-weight: bold;
-      }
-      
-      
-      .contato {
-        background: #1a237e;
-        color: #fff;
-        text-align: center;
-        padding: 32px;
-        font-size: 16px;
-      }
-      
-      
-      .eletricista-animado {
-        position: absolute;
-        top: 60px;
-        left: 90px;
-        width: 150px;
-        animation: piscar 0.75s infinite alternate;
-      }
-      
-      @keyframes piscar {
-        0% {
-          opacity: 1;
-          transform: scale(1);
-        }
-      
-        100% {
-          opacity: 0.5;
-          transform: scale(1.05);
-        }
-      }
-      
-      /* Responsivo */
-      @media (max-width: 1024px) {
-        nav {
-          flex-direction: column;
-          gap: 12px;
-        }
-      
-        .eletricista-animado {
-          position: static;
-          margin: 10px auto;
-        }
-      }
-      
-      @media (max-width: 768px) {
-        .menu {
-          flex-direction: column;
-          gap: 8px;
-          text-align: center;
-        }
-      
-        .banner h2 {
-          font-size: 26px;
-        }
-      
-        .banner p {
-          font-size: 16px;
-        }
-      
-        .sobre {
-          flex-direction: column;
-          text-align: center;
-        }
-      
-      }
-      
-      @media (max-width: 480px) {
-        nav h1 {
-          font-size: 22px;
-        }
-      
-        .banner {
-          padding: 20px 10px;
-        }
-      
-        .grid-servicos {
-          padding: 16px;
-          gap: 16px;
-        }
-      
-        .grid-servicos article {
-          padding: 12px;
-        }
-      
-        footer {
-          font-size: 14px;
-          padding: 20px;
-        }
-      }
-      
-      /* Estilos para o botão */
-      .mudar-cor button {
-        background-color: #1a237e;
-        /* Cor de fundo inicial (azul) */
-        color: white;
-        /* Cor do texto */
-        font-size: 18px;
-        padding: 12px 24px;
-        border: none;
-        border-radius: 8px;
-        /* Borda arredondada */
-        cursor: pointer;
-        transition: all 0.3s ease;
-        /* Transição suave para os efeitos */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        /* Sombra para dar profundidade */
-      }
-      
-      /* Efeito de hover no botão */
-      .mudar-cor button:hover {
-        background-color: #FF5722;
-        /* Cor de fundo ao passar o mouse (laranja) */
-        transform: scale(1.05);
-        /* Aumenta o tamanho do botão um pouco */
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        /* Aumenta a sombra */
-      }
-      
-      /* Efeito de focus (quando o botão é clicado ou focado) */
-      .mudar-cor button:focus {
-        outline: none;
-        /* Remove a borda de foco padrão do navegador */
-        box-shadow: 0 0 10px 3px rgba(255, 87, 34, 0.7);
-        /* Sombra de foco para destaque */
-      }
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eletricistas Davi e Marcos</title>
+  <link rel="shortcut icon" href="imagens/images (2).jpg" type="image/x-icon">
+  <link rel="stylesheet" href="css/estilo.css">
+  
+</head>
 
+<body>
+  <header>
+    <nav>
+      <h1>Davi e Marcos - Eletricistas</h1>
+      <div class="eletricista-animado">
+        <img src="imagens/wonderful-creative-electrician-holding-wires-original-free-png.webp" alt="Eletricista em ação"
+          width="170" height="180">
+      </div>
+      <ul class="menu">
+        <li><a href="#Serviços">Serviços</a></li>
+        <li><a href="#Sobre">Sobre</a></li>
+        <li><a href="#Contato">Contato</a></li>
+      </ul>
+    </nav>
+    <section class="banner">
+      <h2>Serviços Elétricos de Qualidade</h2>
+      <p>Instalações, reparos e manutenções com segurança e eficiência</p>
+    </section>
+  </header>
 
-  </style>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <h1>Davi e Marcos - Eletricistas</h1>
-        <div class="eletricista-animado">
-          <img
-            src="imagens/wonderful-creative-electrician-holding-wires-original-free-png.webp"
-            alt="Eletricista em ação" width="170" height="180">
-        </div>
-        <ul class="menu">
-          <li><a href="#Serviços">Serviços</a></li>
-          <li><a href="#Sobre">Sobre</a></li>
-          <li><a href="#Contato">Contato</a></li>
-        </ul>
-      </nav>
-      <section class="banner">
-        <h2>Serviços Elétricos de Qualidade</h2>
-        <p>Instalações, reparos e manutenções com segurança e eficiência</p>
-      </section>
-    </header>
+  
+  
 
-    <!-- Novo botão para alterar a cor de fundo -->
-    <section class="mudar-cor">
-      <button onclick="mudarCorFundo()">Mudar Cor de Fundo</button>
+  
+  
+
+  <main>
+    <section class="grid-servicos">
+      <article>
+        <img src="imagens/instalacoes-eletricas.jpg" alt="Instalação elétrica">
+        <h3>Instalações</h3>
+        <p>Residencial e comercial, com total segurança.</p>
+      </article>
+      <article>
+        <img src="imagens/eletricista.jpg" alt="Reparo elétrico">
+        <h3>Reparos</h3>
+        <p>Consertos rápidos e garantia de qualidade.</p>
+      </article>
+      <article>
+        <img src="imagens/images (1).jpg" alt="Manutenção elétrica">
+        <h3>Manutenções</h3>
+        <p>Manutenção preventiva e corretiva.</p>
+      </article>
     </section>
 
-    <!-- Script simples em JavaScript -->
-    <script>
-    // Função que é chamada quando o usuário clica no link "Clique aqui"
-    function linkClicado() {
-      console.log("O link foi clicado! Redirecionando para o vídeo.");
-    }
+    <section class="sobre">
+      <div class="sobre-texto">
+        <h2>Dúvidas?</h2>
+        <p>Assista ao vídeo ao clicar no link abaixo com dicas para se tornar
+          um eletricista certificado e oferecer serviços seguros e de
+          qualidade para seus futuros clientes.</p>
 
-    // Função que altera a cor de fundo do site
-    let cores = ['#1a237e', '#000000', '#FF0000']; // Azul, Preto, Vermelho
-    let indiceCor = 0; // Começa com a cor azul
+        <h1> <a href="https://youtu.be/wvTfrmoLfqo?si=TabIclChe5geLlIj&t=2" onclick="linkClicado()">Clique aqui</a></h1>
+      </div>
 
-    function mudarCorFundo() {
-      // Altera a cor de fundo com base no índice
-      document.body.style.backgroundColor = cores[indiceCor];
-      
-      // Atualiza o índice para a próxima cor
-      indiceCor = (indiceCor + 1) % cores.length; // % para voltar ao início após a última cor
-    }
-  </script>
+    </section>
 
-    <main>
-      <section class="grid-servicos">
-        <article>
-          <img src="imagens/instalacoes-eletricas.jpg"
-            alt="Instalação elétrica">
-          <h3>Instalações</h3>
-          <p>Residencial e comercial, com total segurança.</p>
-        </article>
-        <article>
-          <img src="imagens/eletricista.jpg" alt="Reparo elétrico">
-          <h3>Reparos</h3>
-          <p>Consertos rápidos e garantia de qualidade.</p>
-        </article>
-        <article>
-          <img src="imagens/images (1).jpg" alt="Manutenção elétrica">
-          <h3>Manutenções</h3>
-          <p>Manutenção preventiva e corretiva.</p>
-        </article>
-      </section>
+  </main>
 
-      <section class="sobre">
-        <div class="sobre-texto">
-          <h2>Dúvidas?</h2>
-          <p>Assista ao vídeo ao clicar no link abaixo com dicas para se tornar
-            um eletricista certificado e oferecer serviços seguros e de
-            qualidade para seus futuros clientes.</p>
+  <footer class="contato">
+    <h2>Entre em Contato</h2>
+    <p>Email: juntos@eletricista.com | Telefone: (11) 99999-0000</p>
+    <p>&copy; 2025 Davi e Marcos - Todos os direitos reservados.</p>
+  </footer>
 
-          <h1> <a href="https://youtu.be/wvTfrmoLfqo?si=TabIclChe5geLlIj&t=2"
-              onclick="linkClicado()">Clique aqui</a></h1>
-        </div>
+</body>
 
-      </section>
-
-    </main>
-
-    <footer class="contato">
-      <h2>Entre em Contato</h2>
-      <p>Email: juntos@eletricista.com | Telefone: (11) 99999-0000</p>
-      <p>&copy; 2025 Davi e Marcos - Todos os direitos reservados.</p>
-    </footer>
-
-  </body>
 </html>
